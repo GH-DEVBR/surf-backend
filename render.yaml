@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: surfspot-backend
+    env: docker
+    plan: free
+    branch: main
+    repo: https://github.com/GH-DEVBR/surf-backend
+    healthCheckPath: /api/spots
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://surfspot_db_user:GgZC8XFrMLR2vGIZXAB9MapnbdT3mjkr@dpg-d0llb1re5dus73cmoa9g-a.oregon-postgres.render.com/surfspot_db
+      - key: SPRING_DATASOURCE_USERNAME
+        value: surfspot_db_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: GgZC8XFrMLR2vGIZXAB9MapnbdT3mjkr
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
